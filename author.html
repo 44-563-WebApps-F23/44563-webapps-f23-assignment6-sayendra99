@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head><title>AUTHOR WEB PAGE</title></head>
+<body>
+
+<h1>Author entry followed by your Sayendranadh Chowdary</h1>
+
+
+<h2>Getting input</h2>
+<form>
+    <label for="form1_age">The hidden author name</label>
+    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="Dickens"> <br>
+
+    <label for="form1_nick">Guess the author</label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input class="btn btn-primary" type="button" value="Check the guess" onclick="checkAuthor()">
+</form>
+
+
+
+    <p id="result">This text will be replaced</p>
+
+
+
+<script> 
+    let good =0
+    let oops =0
+function checkAuthor(){
+    
+    
+    console.log("Getting form values")
+    name1 = document.getElementById("form1_age").value
+    name2 = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+name1+" and "+name2)
+    score = document.getElementById("result")
+    if(name1==name2){
+        good=good+1
+        alert("You got it right")
+    }
+    else{
+        oops=oops+1
+        alert("Sorry")
+    }
+    score.innerHTML="good count "+good+"  oops count "+oops
+
+}
+</script>
+
+</body>
+</html> 
