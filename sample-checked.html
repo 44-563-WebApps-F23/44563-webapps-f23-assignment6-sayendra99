@@ -56,23 +56,10 @@ function resolveCheck() {
         out.innerHTML = "Values were not confirmed"
     }
 }
+</html>  var resultElement = document.getElementById("result");
+resultElement.innerHTML = "Good: " + good + ", Oops: " + oops;
 
-function resolveRadio() {
-    console.log("Getting input")
-    redOpt = document.getElementById("rg1_red").checked
-    blueOpt = document.getElementById("rg1_blue").checked
-    greenOpt = document.getElementById("rg1_green").checked
-    confirmed = confirm("Are these the values? "+redOpt+" and "+blueOpt+" and "+greenOpt)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
 
 </script>
 
 </body>
-</html> 
