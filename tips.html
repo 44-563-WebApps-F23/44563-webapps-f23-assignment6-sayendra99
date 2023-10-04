@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h2>Getting input</h2>
+
+</body>
+<h2>Getting input</h2>
+<label for="base_element">Enter base amount : </label>
+<input type="number" id="base_element" value="50" required>
+<label for="conversion_element">Enter tip percent : </label>
+<input type="number" id="conversion_element" value="15">
+<input type="button" value="calculate_tip" onclick="tips()">
+<p id="result">right/wrong</p>
+<script>
+     function tips(){
+        var base_element = parseFloat(document.getElementById("base_element").value);
+        var conversion_element = parseFloat(document.getElementById("conversion_element").value);
+        let myOutput = "";
+        var i = 0;
+        while(i<5){
+            var tip = (base_element * (conversion_element    + i * 4)) / 100;
+            myOutput = myOutput + (conversion_element + i * 4) + "% is " + tip.toFixed(2) + ";    ";
+            i++;
+        }
+        document.getElementById("result").innerHTML = "Tips are:" + myOutput;
+     }
+</script>
+<form>
+    <label for="sum">Sum</label>
+    <input type="radio" id="sum" name="operation" value="sum" onclick="chooseOp()">
+    <label for="difference">Diff</label>
+    <input type="radio" id="difference" name="operation" value="difference" onclick="chooseOp()">
+    <label for="multiply">Mult</label>
+    <input type="radio" id="multiply" name="operation" value="multiply" onclick="chooseOp()">
+    <div id="results"></div>
+</form>
+<script>
+function chooseOp() {
+        var base_element = parseFloat(document.getElementById("base_element").value);
+        var conversion_element = parseFloat(document.getElementById("conversion_element").value);
+        var select_Operation = document.querySelector('input[name="operation"]:checked').value;
+        var results;
+        switch (select_Operation){
+            case "sum":
+                results = base_element + conversion_element;
+                break;
+            case "difference":
+                results = base_element - conversion_element;
+                break;
+            case "multiply":
+                results = base_element * conversion_element;
+                break;
+        }
+        document.getElementById("results").innerHTML = `${select_Operation} of ${base_element} and ${conversion_element} is ${results}`;
+    }
+</script>
+  
+</html> 
