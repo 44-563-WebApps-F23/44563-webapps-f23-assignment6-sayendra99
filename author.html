@@ -3,13 +3,13 @@
  <head><title>AUTHOR WEB PAGE</title></head>
 <body>
 
-<h1>Author entry followed by your Sayendranadh Chowdary</h1>
+<h1 style="color:red">Author entry followed by your Sayendranadh Chowdary</h1>
 <h2>Getting input</h2>
 
 <form id="authorGuessForm">
-    <label for="hiddenauthor">The hidden author name</label>
+    <label style="color:blue" for="hiddenauthor">The hidden author name</label>
     <input type="password" id="hiddenauthor" name="hiddenauthor" value="Dickens" required>
-    <label for="guessauthor">Guess the author</label>
+    <label style="color:blue" for="guessauthor">Guess the author</label>
     <input type="text" id="guessauthor" name="guessauthor" required>
     <input type="button" value="Check the guess" onclick="checkAuthor()">
 </form>
@@ -30,7 +30,7 @@ function checkAuthor(){
         result.innerHTML= `Correct Guesses: ${good}`;
     }else{
         oops++;
-        if(oops > 7){
+        if(oops > 7){ 
             document.getElementById("display").onclick=incorrectguesses();
         }
         alert("Sorry");
